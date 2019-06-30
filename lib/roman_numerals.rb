@@ -19,6 +19,8 @@ class Romaniser
   end
 
   def romanise(number)
+    check(number)
+    return "-M" if number == 1_000_000
     answer = []
     pv = highest_place_value(number)
     while pv >= 1 do
@@ -27,6 +29,12 @@ class Romaniser
       pv = pv/10
     end
     answer.join.strip
+  end
+
+  def check(number)
+    raise "number must be an integer" unless number.is_a? Integer
+    raise "number must be above 0" unless number > 0
+    raise "number must be no more than 1 million" unless number <= 1_000_000
   end
 
   def highest_place_value(number)
@@ -62,7 +70,3 @@ class Romaniser
     ]
   end
 end
-
-a = Romaniser.new
-
-p a.romanise(999_999)
