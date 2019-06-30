@@ -1,3 +1,20 @@
+
+
+def generate_array(unit,five_units,ten_units)
+  array = [
+    " ",
+    unit,
+    unit + unit,
+    unit + unit + unit,
+    unit + five_units,
+    five_units,
+    five_units + unit,
+    five_units + unit + unit,
+    five_units + unit + unit + unit,
+    unit + ten_units,
+  ]
+end
+
 def romanise(number)
   answer = []
   answer << romanise_hundreds(how_many_hundreds(number))
@@ -17,7 +34,7 @@ def remainder_after_hundreds(number)
 end
 
 def romanise_hundreds(number)
-  hundreds_array = [" ","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"]
+  hundreds_array = generate_array("C","D","M")
   hundreds_array[number]
 end
 
@@ -30,11 +47,13 @@ def remainder_after_tens(number)
 end
 
 def romanise_ones(number)
-  ones_array = [" ","I","II","III","IV","V","VI","VII","VIII","IX"]
+  ones_array = generate_array("I","V","X")
   ones_array[number]
 end
 
 def romanise_tens(number)
-  tens_array = [" ","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"]
+  tens_array = generate_array("X","L","C")
   tens_array[number]
 end
+
+p romanise(99)
