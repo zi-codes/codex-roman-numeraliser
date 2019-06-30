@@ -54,7 +54,7 @@ end
 
 =end
 
-describe "when numbers are entered ... " do
-  it { expect(romanise(99)).to eq "XCIX" }
-  it { expect(romanise(629)).to eq "DCXXIX" }
+describe Romaniser do
+  it { expect(subject.romanise(99)).to eq "XCIX" }
+  it { expect(subject.romanise(629)).to eq "DCXXIX" }
 end
