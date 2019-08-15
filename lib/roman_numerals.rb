@@ -1,5 +1,7 @@
-# calling instance.romanise(number)
+# Calling instance.romanise(number)
 # will generate any roman numeral up to 1 Million
+# You can also edit the numerals to make up
+# your own number system
 
 class Romaniser
   NUMERALS = {
